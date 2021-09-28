@@ -21,3 +21,7 @@
   width: 400px;
   padding-bottom: 6px;
 }
+
+.error {
+  color: red;
+}
