@@ -1,4 +1,5 @@
 import "./App.css";
+import { Redirect } from "react-router-dom";
 import Create from "./components/Create";
 import Read from "./components/Read";
 import Update from "./components/Update";
@@ -9,6 +10,9 @@ function App() {
     <Router>
       <div className="main">
         <h2 className="main-header">React Crud Operations</h2>
+        <Route exact path="/">
+          <Redirect to="/read" />
+        </Route>
         <div>
           <Route exact path="/create" component={Create} />
         </div>

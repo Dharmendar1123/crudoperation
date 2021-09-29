@@ -14,10 +14,10 @@ function Read() {
   }, []);
 
   const setData = (data) => {
-    let { id, firstName, lastName, email } = data;
+    let { id, fname, lname, email } = data;
     localStorage.setItem("ID", id);
-    localStorage.setItem("First Name", firstName);
-    localStorage.setItem("Last Name", lastName);
+    localStorage.setItem("First Name", fname);
+    localStorage.setItem("Last Name", lname);
     localStorage.setItem("Email", email);
   };
 
@@ -56,8 +56,8 @@ function Read() {
             return (
               <Table.Row key={data.id}>
                 <Table.Cell>{data.id}</Table.Cell>
-                <Table.Cell>{data.firstName}</Table.Cell>
-                <Table.Cell>{data.lastName}</Table.Cell>
+                <Table.Cell>{data.fname}</Table.Cell>
+                <Table.Cell>{data.lname}</Table.Cell>
                 <Table.Cell>{data.email}</Table.Cell>
                 <Table.Cell>
                   <Link to="/update">

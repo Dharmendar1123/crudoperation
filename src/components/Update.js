@@ -6,22 +6,22 @@ import { useHistory } from "react-router";
 function Update() {
   let history = useHistory();
   const [id, setID] = useState(null);
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [fname, setfname] = useState("");
+  const [lname, setlname] = useState("");
   const [email, setEmail] = useState("");
 
   useEffect(() => {
     setID(localStorage.getItem("ID"));
-    setFirstName(localStorage.getItem("First Name"));
-    setLastName(localStorage.getItem("Last Name"));
+    setfname(localStorage.getItem("First Name"));
+    setlname(localStorage.getItem("Last Name"));
     setEmail(localStorage.getItem("Email"));
   }, []);
 
   const updateAPIData = () => {
     axios
       .put(`https://6152a1214a5f22001701d7ab.mockapi.io/fakerData/${id}`, {
-        firstName,
-        lastName,
+        fname,
+        lname,
         email,
       })
       .then(() => {
@@ -36,8 +36,8 @@ function Update() {
           <label>First Name</label>
           <input
             placeholder="First Name"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
+            value={fname}
+            onChange={(e) => setfname(e.target.value)}
           />
         </Form.Field>
 
@@ -45,8 +45,8 @@ function Update() {
           <label>Last Name</label>
           <input
             placeholder="Last Name"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
+            value={lname}
+            onChange={(e) => setlname(e.target.value)}
           />
         </Form.Field>
 
@@ -58,7 +58,6 @@ function Update() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Field>
-
         <Button type="submit" onClick={updateAPIData}>
           Update
         </Button>
